@@ -3,6 +3,12 @@ name: Build and Push to ECR
 on:
   push:
     branches: ["main"]
+    paths:
+      - "server.js"
+      - "package.json"
+      - "package-lock.json"
+      - "Dockerfile"
+      - ".github/workflows/ecr.yml"
 
 permissions:
   id-token: write
