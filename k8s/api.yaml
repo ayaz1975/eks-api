@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: 636851749897.dkr.ecr.eu-north-1.amazonaws.com/api:latest
+        image: 636851749897.dkr.ecr.eu-north-1.amazonaws.com/api:369e35a
         ports:
         - containerPort: 3000
         envFrom:
