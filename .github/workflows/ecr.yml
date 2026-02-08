@@ -51,12 +51,12 @@ jobs:
 
       - name: Update manifest image tag
         run: |
-          sed -i "s|image: .*|image: ${ECR_REGISTRY}/${ECR_REPOSITORY}:${GITHUB_SHA}|" k8s/dev/deployment.yaml
+          sed -i "s|image: .*|image: ${ECR_REGISTRY}/${ECR_REPOSITORY}:${GITHUB_SHA}|" k8s/dev/api.yaml
 
       - name: Commit and push manifest update
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add k8s/dev/deployment.yaml
+          git add k8s/dev/api.yaml
           git commit -m "chore: update image to ${GITHUB_SHA}" || exit 0
           git push
